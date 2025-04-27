@@ -41,30 +41,41 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
-              'Welcome to PingMe!',
-              style: TextStyle(fontSize: 24),
+      backgroundColor: Colors.white,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/images/logo/logo_icon.png',
+            width: 230,
+            height: 230,
+          ),
+          const SizedBox(height: 32),
+          const SizedBox(height: 16),
+
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: SizedBox(
+                width: 350,
+                height: 48,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFB095EC),
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  onPressed: _navigateToLoginPage,
+                  child: const Text('Go to Login'),
+                ),
+              ),
             ),
-            SizedBox(height: 16),
-            Text(
-              'Press the + button to go to Login Page',
-              style: TextStyle(fontSize: 16),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _navigateToLoginPage,
-        tooltip: 'Go to Login',
-        child: const Icon(Icons.login),
+          ),
+        ],
       ),
     );
   }

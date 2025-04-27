@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="lck_board"
+        android:label="ping_me"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

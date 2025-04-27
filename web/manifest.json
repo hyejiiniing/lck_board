@@ -1,6 +1,6 @@
 {
-    "name": "lck_board",
-    "short_name": "lck_board",
+    "name": "ping_me",
+    "short_name": "ping_me",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

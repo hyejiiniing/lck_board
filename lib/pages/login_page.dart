@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 56,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFB095EC),
+                      backgroundColor: Color(0xFFAE90E4),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -54,7 +54,10 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(width: 12),
                         const Text(
                           'Ping Me 로그인',
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ],
                     ),
@@ -104,10 +107,13 @@ class GoogleLoginButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/login/google_logo.png',
-              width: 42,
-              height: 42,
+            Padding(
+              padding: const EdgeInsets.only(right: 6),
+              child: Image.asset(
+                'assets/images/login/google_logo.png',
+                width: 44,
+                height: 44,
+              ),
             ),
             const SizedBox(width: 12),
             const Text(
@@ -142,10 +148,13 @@ class KakaoLoginButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/login/kakao_logo.png',
-              width: 37,
-              height: 37,
+            Padding(
+              padding: const EdgeInsets.only(right: 17),
+              child: Image.asset(
+                'assets/images/login/kakao_logo.png',
+                width: 37,
+                height: 37,
+              ),
             ),
             const SizedBox(width: 12),
             const Text(
@@ -180,15 +189,18 @@ class NaverLoginButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/login/naver_logo.png',
-              width: 40,
-              height: 40,
+            Padding(
+              padding: const EdgeInsets.only(right: 17),
+              child: Image.asset(
+                'assets/images/login/naver_logo.png',
+                width: 37,
+                height: 37,
+              ),
             ),
             const SizedBox(width: 12),
             const Text(
               '네이버 로그인',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
             ),
           ],
         ),

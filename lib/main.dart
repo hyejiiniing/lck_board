@@ -48,8 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Image.asset(
             'assets/images/logo/logo_icon.png',
-            width: 230,
-            height: 230,
+            width: 400,
+            height: 280,
           ),
           const SizedBox(height: 32),
           const SizedBox(height: 16),

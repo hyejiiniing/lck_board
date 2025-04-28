@@ -178,7 +178,7 @@ class NaverLoginButton extends StatelessWidget {
       height: 56,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color(0xFF1EC800),
+          backgroundColor: Color(0xFF03C75A),
           foregroundColor: Colors.white,
           minimumSize: Size(320, 56),
           shape: RoundedRectangleBorder(

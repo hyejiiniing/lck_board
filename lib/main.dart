@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: SizedBox(
-                width: 350,
+                width: 360,
                 height: 48,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(

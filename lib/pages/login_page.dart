@@ -8,89 +8,192 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+  void _handleGoogleLogin() {}
 
-  void _handleLogin() {
-    final email = _emailController.text.trim();
-    final password = _passwordController.text;
-
-    print('Login attempt: $email / $password');
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Login attempt: $email')),
-    );
-  }
+  void _handlePingMeLogin() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
-                controller: _emailController,
-                decoration: const InputDecoration(labelText: 'Email'),
-                keyboardType: TextInputType.emailAddress,
-              ),
-              const SizedBox(height: 16),
-
-              TextField(
-                controller: _passwordController,
-                decoration: const InputDecoration(labelText: 'Password'),
-                obscureText: true,
-              ),
-              const SizedBox(height: 24),
-
-              SizedBox(
-                width: double.infinity,
-                height: 48,
-                child: ElevatedButton(
-                  onPressed: _handleLogin,
-                  child: const Text('Login'),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text('Login'),
+        backgroundColor: Color(0xFFBB9BE4),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/logo/logo_icon.png',
+                  width: 400,
+                  height: 80,
                 ),
-              ),
-              const SizedBox(height: 40),
-              const Divider(),
-              const SizedBox(height: 24),
+                const SizedBox(height: 40),
+                SizedBox(
+                  width: 320,
+                  height: 56,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFBB9BE4),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onPressed: _handlePingMeLogin,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/logo/app_icon.png',
+                          width: 46,
+                          height: 46,
+                        ),
+                        const SizedBox(width: 12),
+                        const Text(
+                          'Ping Me 로그인',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
 
-              Wrap(
-                spacing: 20,
-                runSpacing: 20,
-                alignment: WrapAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/images/login/kakao_logo.png',
-                    width: 56,
-                    height: 56,
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'assets/images/login/google_logo.png',
-                    width: 56,
-                    height: 56,
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'assets/images/login/apple_logo.png',
-                    width: 56,
-                    height: 56,
-                    fit: BoxFit.cover,
-                  ),
-                  Image.asset(
-                    'assets/images/login/naver_logo.png',
-                    width: 56,
-                    height: 56,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ],
+                const SizedBox(height: 24),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GoogleLoginButton(onPressed: _handleGoogleLogin),
+                    const SizedBox(height: 20),
+                    KakaoLoginButton(),
+                    const SizedBox(height: 20),
+                    NaverLoginButton(),
+                  ],
+                ),
+              ],
+            ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class GoogleLoginButton extends StatelessWidget {
+  final VoidCallback onPressed;
+
+  const GoogleLoginButton({required this.onPressed, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 320,
+      height: 56,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0xFFF2F2F2),
+          foregroundColor: Colors.black,
+          minimumSize: Size(320, 56),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: onPressed,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/login/google_logo.png',
+              width: 42,
+              height: 42,
+            ),
+            const SizedBox(width: 12),
+            const Text(
+              'Google 로그인',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class KakaoLoginButton extends StatelessWidget {
+  const KakaoLoginButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 320,
+      height: 56,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0xFFFFEB3B),
+          foregroundColor: Colors.black,
+          minimumSize: Size(320, 56),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: () {},
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/login/kakao_logo.png',
+              width: 37,
+              height: 37,
+            ),
+            const SizedBox(width: 12),
+            const Text(
+              '카카오 로그인',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class NaverLoginButton extends StatelessWidget {
+  const NaverLoginButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 320,
+      height: 56,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0xFF1EC800),
+          foregroundColor: Colors.white,
+          minimumSize: Size(320, 56),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: () {},
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/login/naver_logo.png',
+              width: 40,
+              height: 40,
+            ),
+            const SizedBox(width: 12),
+            const Text(
+              '네이버 로그인',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
+          ],
         ),
       ),
     );

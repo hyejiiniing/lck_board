@@ -16,10 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text('Login'),
-        backgroundColor: Color(0xFFBB9BE4),
-      ),
+      appBar: AppBar(backgroundColor: Colors.white),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -31,15 +28,15 @@ class _LoginPageState extends State<LoginPage> {
                 Image.asset(
                   'assets/images/logo/logo_icon.png',
                   width: 400,
-                  height: 80,
+                  height: 280,
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 80),
                 SizedBox(
                   width: 320,
                   height: 56,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFBB9BE4),
+                      backgroundColor: Color(0xFFB095EC),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),

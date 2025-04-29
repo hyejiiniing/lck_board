@@ -1,4 +1,4 @@
-# ping_me
+# pingme
 
 A new Flutter project.
 

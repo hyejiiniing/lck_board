@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: 400,
                   height: 280,
                 ),
-                const SizedBox(height: 80),
+                const SizedBox(height: 40),
                 SizedBox(
                   width: 320,
                   height: 56,

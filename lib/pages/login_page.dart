@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ping_me/pages/login/pingme_login_form_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,9 +9,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  void _handleGoogleLogin() {}
+  void _handlePingMeLogin() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const PingMeLoginFormPage()),
+    );
+  }
 
-  void _handlePingMeLogin() {}
+  void _handleGoogleLogin() {}
 
   @override
   Widget build(BuildContext context) {
